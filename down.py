@@ -6,6 +6,7 @@ course videos and subtitles from Lynda.com.
 Ref: https://github.com/rg3/youtube-dl/blob/master/README.md#embedding-youtube-dl
 """
 
+from __future__ import print_function, unicode_literals  # for backward compatibility
 import youtube_dl
 
 # -- Set up parameters --------------------------------------------
