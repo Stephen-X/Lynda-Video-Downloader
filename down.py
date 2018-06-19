@@ -33,9 +33,9 @@ DOWN_SUB = True
 # https://github.com/rg3/youtube-dl/blob/master/youtube_dl/YoutubeDL.py
 ydl_opts = {
     # Download the best quality available in Lynda (i.e. 720p)
-	# The following means "download `bestvideo` and `bestaudio` separately and mux them together
-	# into a single file giving the best overall quality available; if not available, fall back
-	# to `best` and download the best available quality served as a single file".
+    # The following means "download `bestvideo` and `bestaudio` separately and mux them together
+    # into a single file giving the best overall quality available; if not available, fall back
+    # to `best` and download the best available quality served as a single file".
     # More options: https://github.com/rg3/youtube-dl/blob/master/README.md#format-selection
     'format': 'bestvideo+bestaudio/best',
 
