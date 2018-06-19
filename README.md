@@ -9,6 +9,8 @@ A convenient script for downloading and organizing [Lynda.com](https://www.lynda
 
 1. Make sure you have Python (either 2 or 3) installed and accessible via command line, then install [youtube-dl](http://rg3.github.io/youtube-dl/) by `pip install youtube-dl`. If you have both Python 2 and 3 installed in your system, check that you're using the correct `pip` alias for the target python version (e.g. it could be `pip3` for Python 3).
 
+2. Install [FFmpeg](https://www.ffmpeg.org/) or [avconv](https://libav.org/avconv.html), and make sure it's accessible via command line. Either of them is required to mux video and audio into one single file when downloading from sites like YouTube (they keep videos and audios with *best possible* qualities to their separate files). I recommend that you use a package manager to install either of them. On Windows, you may install [Scoop](https://scoop.sh/) then `scoop install ffmpeg`; on MacOS, you may install [Homebrew](https://brew.sh/) then `brew install ffmpeg` for FFmpeg ([More options](https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#ffmpegthroughHomebrew)) or `brew install libav` for avconv.
+
 2. Set up your credentials. There're two scenarios:
     1) You have your own Lynda.com account:
 
