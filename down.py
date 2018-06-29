@@ -32,23 +32,54 @@ DOWN_SUB = True
 # 'Available options') in ydl's source code:
 # https://github.com/rg3/youtube-dl/blob/master/youtube_dl/YoutubeDL.py
 ydl_opts = {
-    # Download the best quality available in Lynda (i.e. 720p)
+
+    # -- For video downloads ----------------------------------------------
+
+    # Download the best quality available
+    # More options: https://github.com/rg3/youtube-dl/blob/master/README.md#format-selection
+
     # The following means "download `bestvideo` and `bestaudio` separately and mux them together
     # into a single file giving the best overall quality available; if not available, fall back
     # to `best` and download the best available quality served as a single file".
-    # More options: https://github.com/rg3/youtube-dl/blob/master/README.md#format-selection
     'format': 'bestvideo+bestaudio/best',
 
-    # Set up how the downloaded files are renamed and organized
-    # Ref: https://github.com/rg3/youtube-dl/blob/master/README.md#output-template
-    # 'outtmpl': 'Lynda.com- %(playlist)s/%(chapter_number)s- %(chapter)s/%(playlist_index)s- %(title)s.%(ext)s',
-    'outtmpl': 'Lynda.com- %(playlist)s/%(chapter)s/%(playlist_index)s- %(title)s.%(ext)s',
+    # The following simply download the best available quality served as a single file. Note
+    # that this may not download the best available quality in websites such as YouTube, since
+    # they separate video and audio tracks for videos with resolution higher than 720p.
+    # 'format': 'best',
 
-    # Subtitle download settings
+    # -- For audio downloads ---------------------------------------------
+
+    # The following will first download audio track with the best possible quality, then convert
+    # to mp3 with a bit rate of 192 kbps.
+    # Look here for a complete list of available postprocessors:
+    # https://github.com/rg3/youtube-dl/blob/master/youtube_dl/postprocessor/__init__.py
+    # and the constructor of the selected postprocessor for keyword names (remember to
+    # remove the last 'PP' from the postprocessor names).
+    # 'format': 'bestaudio/best',
+    # 'postprocessors': [{
+    #     'key': 'FFmpegExtractAudio',
+    #     'preferredcodec': 'mp3',
+    #     'preferredquality': '192'  # bit rate
+    # }],
+
+    # -- Set up how the downloaded files are renamed and organized --------------
+    # Ref: https://github.com/rg3/youtube-dl/blob/master/README.md#output-template
+
+    # Template for video playlists
+    'outtmpl': '%(playlist)s/%(playlist_index)s- %(title)s.%(ext)s',
+
+    # Template for single video urls
+    # 'outtmpl': '%(title)s - %(uploader)s.%(ext)s',
+
+    # -- Subtitle download settings ---------------------------------------
+
     'writesubtitles': DOWN_SUB,
     # 'subtitleslangs': ['en'],
     'allsubtitles': True,
     'subtitlesformat': 'srt',  # Lynda subtitles are texts in srt format
+
+    # ---------------------------------------------------------------------
 
     # youtube-dl can log identifiers of all downloaded videos so that only new
     # videos from a playlist is downloaded; comment this out if you don't need
