@@ -6,7 +6,16 @@ course videos and subtitles from Lynda.com.
 Ref: https://github.com/rg3/youtube-dl/blob/master/README.md#embedding-youtube-dl
 """
 
+# I heard that most Mac people still primarily use built-in Python 2...
 from __future__ import print_function, unicode_literals
+
+# I heard that people don't upgrade their Python packages often...
+import sys
+import subprocess
+# Call pip through the current Python executable to avoid installing packages
+# to the wrong Python distribution
+subprocess.call([sys.executable, '-m', 'pip', 'install', 'youtube-dl'])
+
 import youtube_dl
 
 # -- Set up parameters --------------------------------------------
