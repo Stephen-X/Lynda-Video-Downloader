@@ -14,7 +14,7 @@ import sys
 import subprocess
 # Call pip through the current Python executable to avoid installing packages
 # to the wrong Python distribution
-subprocess.call([sys.executable, '-m', 'pip', 'install', 'youtube-dl'])
+subprocess.call([sys.executable, '-m', 'pip', 'install', '-U', 'youtube-dl'])
 
 import youtube_dl
 
