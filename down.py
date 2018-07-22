@@ -50,6 +50,10 @@ ydl_opts = {
     # available quality served as a single file".
 
     'format': 'bestvideo+bestaudio/best',
+    # Use MKV as container format when merging best video and audio
+    # tracks. Note that MP4 format is not recommended because it supports
+    # only limited formats of audio / video tracks
+    'merge_output_format': 'mkv',
 
     # The following simply download the best available quality served as a
     # single file. Note that this may not download the best available quality
@@ -89,7 +93,7 @@ ydl_opts = {
     'writesubtitles': DOWN_SUB,
     # 'subtitleslangs': ['en'],
     'allsubtitles': True,
-    'subtitlesformat': 'srt',  # Lynda subtitles are texts in srt format
+    'subtitlesformat': 'srt',  # prefer subtitles in SRT format
 
     # ---------------------------------------------------------------------
 
