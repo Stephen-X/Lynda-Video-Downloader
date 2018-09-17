@@ -20,6 +20,8 @@ A convenient script for downloading and organizing [Lynda.com](https://www.lynda
 
         2.1. Install the [cookies.txt](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg) Chrome extension, log in to [Lynda.com](https://www.lynda.com/) with your organization portal, then dump the cookies of the Lynda site using the extension (click the extension icon, then click "To download cookies for this tab click here" in the pop-up window). Save your cookies as `cookies.txt` and place it in the same directory as `down.py`.
 
+        In Firefox you can download the equivalent addons [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt).
+
         2.2. Set line 16 of `down.py` to `USE_COOKIES = True`.
 
 3. Put URLs of all courses that you wish to download inside a file named `urls.txt` and place it in the same directory as `down.py`. Here I included a sample `urls.txt` file (FYI the included courses are from the famous Adobe Photoshop & Illustrator One-on-One series by [Deke McClelland](https://www.deke.com/)), but you should remember to clear the file content first if you'd like to download something else.
